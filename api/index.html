@@ -50,11 +50,8 @@
     if (urlParmStr == url){
         urlParmStr = "https://gkofgibff.github.io";
     }
-    console.log("跳转中");
-    urlParmStr = this.jiemi(urlParmStr,5);
-    console.log(urlParmStr);
-    console.log(123);
-    location.href=urlParmStr;
+    urlParmStr_decoded = this.jiemi(urlParmStr,5);
+    location.href=urlParmStr_decoded;
     }
 </script>
     <script async type="text/javascript" src="https://js.users.51.la/21480329.js"></script>
