@@ -26,7 +26,7 @@
         return newStr;
     }
     var url = document.location.toString();
-    var urlParmStr = jiemi(url.slice(url.indexOf('=')+1),5);
+    var urlParmStr = url.slice(url.indexOf('=')+1);
     var ua = navigator.userAgent.toLowerCase();
     var isQQ = ua.indexOf('qq') != -1;
     var isWeixin = ua.indexOf('micromessenger') != -1;
@@ -50,7 +50,7 @@
     if (urlParmStr == url){
         urlParmStr = "https://gkofgibff.github.io";
     }
-    urlParmStr_decoded = urlParmStr
+    urlParmStr_decoded = decodeURIComponent(atob(jiemi(urlParmStr)));
     location.href=urlParmStr_decoded;
     }
 </script>
