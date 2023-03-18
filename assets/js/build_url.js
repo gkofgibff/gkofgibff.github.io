@@ -33,7 +33,7 @@ function jiemi(str, num) {
 
 function build_url(){
     var url = encodeURI(document.querySelector('#url').value);
-    url = document.location.href + 'api/?username=' + this.jiami(url,5);
+    url = document.location.href + 'api/?username=' + encodeURIComponent(btoa(jiami(url,5)));
     console.log(url)
     document.getElementById("b_url").innerHTML=`<a href=${url} target='_blank'>${url}</a>`;
 }
