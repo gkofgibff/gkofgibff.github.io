@@ -8,6 +8,23 @@
 <body>
     <div id="tips" style="font-size:25px;text-align: center;line-height: 50px;"></div>
     <script>
+
+    function jiemi(str, num) {
+        var newStr = "";
+        for (let i = 0; i < str.length; i++) {
+            // str.chatCodeAt(i);
+            if (str.charCodeAt(i) >= 65 && str.charCodeAt(i) <= 90) {
+            newStr += String.fromCharCode((str.charCodeAt(i) - 65 - num + 26) % 26 + 65)
+            }
+            else if (str.charCodeAt(i) >= 97 && str.charCodeAt(i) <= 122) {
+            newStr += String.fromCharCode((str.charCodeAt(i) - 97 - num + 26) % 26 + 97)
+            }
+            //特殊符号不做处理
+            else newStr += String.fromCharCode(str.charCodeAt(i));
+        }
+        // console.log(newStr);
+        return newStr;
+    }
     var url = document.location.toString();
     var urlParmStr = url.slice(url.indexOf('=')+1);
     var ua = navigator.userAgent.toLowerCase();
@@ -33,12 +50,12 @@
     if (urlParmStr == url){
         urlParmStr = "https://www.qian.blue";
     }
+    urlParmStr = jiemi(urlParmStr);
+    urlParmStr = window.atob(urlParmStr);
     console.log(urlParmStr);
     location.href=urlParmStr;
     }
 </script>
     <script async type="text/javascript" src="https://js.users.51.la/21480329.js"></script>
-    <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
-	<script>LA.init({id: "JsTawo0DkJhtEmv4",ck: "JsTawo0DkJhtEmv4"})</script>
 </body>
 </html>
