@@ -22,11 +22,11 @@
             //特殊符号不做处理
             else newStr += String.fromCharCode(str.charCodeAt(i));
         }
-        // console.log(newStr);
+        console.log("jiemi");
         return newStr;
     }
     var url = document.location.toString();
-    var urlParmStr = this.jiemi(url.slice(url.indexOf('=')+1),5);
+    var urlParmStr = jiemi(url.slice(url.indexOf('=')+1),5);
     var ua = navigator.userAgent.toLowerCase();
     var isQQ = ua.indexOf('qq') != -1;
     var isWeixin = ua.indexOf('micromessenger') != -1;
@@ -50,7 +50,7 @@
     if (urlParmStr == url){
         urlParmStr = "https://gkofgibff.github.io";
     }
-    urlParmStr_decoded = this.jiemi(urlParmStr,5);
+    urlParmStr_decoded = urlParmStr
     location.href=urlParmStr_decoded;
     }
 </script>
