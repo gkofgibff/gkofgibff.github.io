@@ -33,8 +33,7 @@ function jiemi(str, num) {
 
 function build_url(){
     var url = encodeURI(document.querySelector('#url').value);
-    url = jiami(url,5)
-    url = "https://qiantigers.github.io/qq_fanghong/api/?url=" + window.btoa(url);
+    url = "https://qiantigers.github.io/qq_fanghong/api/?url=" + jiami(url,5);
     console.log(url)
     document.getElementById("b_url").innerHTML=`<a href=${url} target='_blank'>${url}</a>`;
 }
